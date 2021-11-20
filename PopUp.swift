@@ -9,9 +9,10 @@ import SwiftUI
 
 struct PopUp: View {
     var body: some View {
-        ZStack {
+        VStack {
+            Spacer()
       PopUpBackground()
-           
+            
         }
  
     }
@@ -28,9 +29,27 @@ struct PopUpBackground: View {
                 .animation(.easeInOut, value: 1.0)
                 .frame(height: 400)
                 .background(Color.clear)
-            Image("singInWithApple")
-                .resizable()
-                .scaledToFit()
+            VStack {
+                Text("Authorize First")
+                    .foregroundColor(myColor)
+                    .font(.system(size: width / 15, weight: .semibold, design: .default))
+                    .fontWeight(.bold)
+                Image("singInWithApple")
+                    .resizable()
+                    .frame(maxWidth: width / 1.5, maxHeight: height / 18, alignment: .center)
+                    .padding(70)
+                Text("Login to use the App & access your save data.")
+                    .font(.system(size: width / 34, weight: .semibold, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(myColor)
+                    .opacity(0.8)
+                Text("We have no intention of collection your personal data.")
+                    .font(.system(size: width / 40, weight: .semibold, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(myColor)
+                    .opacity(0.8)
+            }
+                
         }
        
     }
